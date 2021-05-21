@@ -1,0 +1,37 @@
+<div class="container">
+    <br><br><br>
+    <h1>Book Details</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Book Publisher</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.bookName}}</td>
+            <td>{{book.authorName}}</td>
+            <td>{{book.publisherName}}</td>
+            <td>{{book.price}}</td>
+            <td>
+                <button (click)="updateBook(book.id)" class = "btn btn-outline-success"> Update</button>
+            </td>
+            <td>
+                <button (click)="deleteBook(book.id)" class = "btn btn-outline-warning" style="margin-left: 10px"> Delete</button>
+            </td>
+            <td> 
+                <button (click)="bookDetails(book.id)" class = "btn btn-outline-info" style="margin-left: 10px"> View</button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
+</div>

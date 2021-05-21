@@ -1,0 +1,60 @@
+<div class="container">
+   
+    <div class="col-md-6 offset-md-3">
+        <h3> Create Employee </h3>
+        <form #userForm="ngForm"(ngSubmit) = "onSubmit()">
+        
+            <!-- <div class="form-group">
+                <label> Book Name</label>
+                <input type="text" class ="form-control" id = "bookName"
+                    [(ngModel)] = "book.bookName" name = "bookName">
+            </div> -->
+
+
+            <div class="form-group">
+                <label for="">Book Name</label>
+                <input type="text" #bookName="ngModel" [(ngModel)] = "book.bookName" name = "bookName"  name = "bookName" [class.is-invalid]="bookName.invalid && bookName.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="bookName.untouched || bookName.valid">This is required field</small>
+              </div>
+
+
+        
+            <!-- <div class="form-group">
+                <label> Author Name</label>
+                <input type="text" class ="form-control" id = "authorName"
+                    [(ngModel)] = "book.authorName" name = "authorName">
+            </div>
+         -->
+         <div class="form-group">
+            <label for="">Author Name</label>
+            <input type="text" #authorName="ngModel" [(ngModel)] = "book.authorName" name = "authorName"  name = "authorName" [class.is-invalid]="authorName.invalid && authorName.touched" class="form-control" required />
+            <small class="text-danger" [class.d-none]="authorName.untouched || authorName.valid">This is required field</small>
+          </div>
+            <!-- <div class="form-group">
+                <label> Book Publisher</label>
+                <input type="text" class ="form-control" id = "publisherName"
+                    [(ngModel)] = "book.publisherName" name = "publisherName">
+            </div> -->
+            <div class="form-group">
+                <label for="">Publisher Name</label>
+                <input type="text" #publisherName="ngModel" [(ngModel)] = "book.publisherName" name = "publisherName"  name = "publisherName" [class.is-invalid]="publisherName.invalid && publisherName.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="publisherName.untouched || publisherName.valid">This is required field</small>
+              </div>
+
+            <!-- <div class="form-group">
+                <label> Book Price</label>
+                <input type="text" class ="form-control" id = "price"
+                    [(ngModel)] = "book.price" name = "price">
+            </div> -->
+
+            <div class="form-group">
+                <label for="">Book Price</label>
+                <input type="text" #price="ngModel" [(ngModel)] = "book.price" name = "price"  name = "price" [class.is-invalid]="price.invalid && price.touched" class="form-control" required />
+                <small class="text-danger" [class.d-none]="price.untouched || price.valid">This is required field</small>
+              </div>
+           
+        
+            <button class = "btn btn-success" type ="submit">Submit</button>
+        
+        </form>
+        </div> 
